@@ -12,7 +12,7 @@ docker run -dp 3000:3000 wokway-govtech
 ## Objectives attemped
 - Main objective
 - Good frontend design (frontend) (tried to make it not too ugly.)
-- Extra points for usage of database wrapper – ORM (backend)
+- Usage of database wrapper – ORM (backend)
 - Usage of container technologies such as Dockers or Kubernetes
 - Usage of cloud technologies such as AWS, GCP or Azure
 
