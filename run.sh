@@ -1,4 +1,4 @@
 #!/bin/sh
-python3 backend/manage.py runserver 2> backend.log & 
+python3 backend/manage.py runserver & 
 cd frontend
 npm start 
