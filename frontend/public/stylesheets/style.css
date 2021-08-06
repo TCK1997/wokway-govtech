@@ -1,0 +1,38 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.card-columns {
+  column-count: 3;
+  column-gap: 1.25rem;
+}
+
+.card-columns .card {
+  margin-bottom: 0.75rem;
+}
+
+.card-columns .card {
+  display: inline-block;
+  width: 100%;
+}
+
+#maintitle {
+  margin-bottom: 20px;
+}
+
+.btn-sm{
+  margin: 5px;
+}
+
+#additem {
+  margin-bottom: 10px;
+}
+
+label {
+  padding: 8px;
+}

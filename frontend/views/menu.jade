@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    .container-fluid 
+        .row 
+            .col-md-6.col-sm-10.mx-auto.p-0 
+                h1#maintitle.text-center Woy Way Menu
+                .card-columns
+                    each item in data
+                        .card.p-3
+                            h4= item.name
+                            p=("$"+item.price)

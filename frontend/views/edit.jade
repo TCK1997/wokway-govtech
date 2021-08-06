@@ -1,0 +1,75 @@
+extends layout
+
+block content
+    .container-fluid
+        .row
+            .col-md-6.col-sm-10.mx-auto.p-0 
+                h1#maintitle.text-center Woy Way Menu
+                button(type="button" id="additem" data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-primary") Add item
+
+                .card-columns
+                    each item in data
+                        .card.p-3
+                            h4= (item.id + " " + item.name)
+                            p=("$"+item.price)
+                            button(item-price="#{item.price}" item-name="#{item.name}" item-id="#{item.id}" type="button" data-bs-toggle="modal" data-bs-target="#updateModal" class="btn btn-primary btn-sm") Update
+                            button(item-id="#{item.id}" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal" class="btn btn-danger btn-sm") Delete
+    
+    .modal.fade(id="addModal" aria-labelledby="addModalLabel" aria-hidden="true" tabindex="-1")
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    h5.modal-title#addModalLabel Add item
+                    button(type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close")
+      
+                .modal-body
+                    form(method="POST", action="/edit/add" id="addItem") 
+                        .mb-3
+                            label(for='addName' class="col-form-label") 
+                                h6 Name
+                                input(id='addName' class="form-control" type='text' value='' placeholder='' name='addName')
+                        .mb-3
+                            label(for='addPrice' class="col-form-label") 
+                                h6 Price
+                                input(id="addPrice" class="form-control" type="number" min="0.00" max="10000.00" step="0.01" name="addPrice")
+
+                .modal-footer
+                    button(class="btn btn-primary" form="addItem" type='submit') Add
+    
+    .modal.fade(id="updateModal" aria-labelledby="updateModalLabel" aria-hidden="true" tabindex="-1")
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    h5.modal-title#updateModalLabel Update item
+                    button(type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close")
+      
+                .modal-body
+                    form(method="POST", action="/edit/update" id="updateItem")
+                        input(id='itemId' class="form-control" type='hidden' value='' placeholder='' name='itemId')
+                        .mb-3
+                            label(for='updateName' class="col-form-label") 
+                                h6 Name
+                                input(id='updateName' class="form-control" type='text' value='' placeholder='' name='updateName')
+                        .mb-3
+                            label(for='updatePrice' class="col-form-label") 
+                                h6 Price
+                                input(id="updatePrice" class="form-control" type="number" min="0.00" max="10000.00" step="0.01" name="updatePrice")
+
+                .modal-footer
+                    button(class="btn btn-primary" form="updateItem" type='submit') Update
+    
+    .modal.fade(id="deleteModal" aria-labelledby="deleteModalLabel" aria-hidden="true" tabindex="-1")
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    h5.modal-title#deleteModalLabel Confirm delete item?
+                    button(type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close")
+      
+                .modal-body
+                    form(method="POST", action="/edit/delete" id="deleteItem")
+                        input(type="hidden" id='itemId' class="form-control" value='' placeholder='' name='itemId')
+
+                .modal-footer
+                    button(class="btn btn-primary" form="deleteItem" type='submit') Confirm
+    
+    script(language="javascript" src="/javascripts/update.js")
