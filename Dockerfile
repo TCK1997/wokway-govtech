@@ -9,5 +9,5 @@ WORKDIR /app
 COPY . /app
 RUN chmod +x run.sh
 RUN chmod +x setup.sh
-RUN setup.sh
+RUN ./setup.sh
 CMD ["./run.sh"]
