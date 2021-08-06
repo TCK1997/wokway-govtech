@@ -6,6 +6,7 @@ https://wokway-govtech-pxj4dtyzhq-uc.a.run.app/edit
 
 ## To run a local verion
 docker build -t wokway-govtech .
+
 docker run -dp 3000:3000 wokway-govtech
 
 ## Objectives attemped
