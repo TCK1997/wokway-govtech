@@ -125,5 +125,10 @@ STATIC_URL = '/static/'
 
 
 CORS_ORIGIN_WHITELIST = [
-     'http://localhost:3000'
+    "https://wokway-govtech-pxj4dtyzhq-uc.a.run.app",
+    "https://localhost",
+    "https://localhost:8080",
+    "http://127.0.0.1:3000",
+    "https://localhost:3000",
+    "http://127.0.0.1:3000"
 ]
