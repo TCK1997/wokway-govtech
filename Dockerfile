@@ -7,6 +7,8 @@ RUN pip3 install django djangorestframework django-cors-headers
 RUN apk add --no-cache g++ make bash
 WORKDIR /app
 COPY . /app
+RUN python backend/manage.py makemigrations
+RUN python backend/manage.py migrate
 RUN chmod +x run.sh
 RUN chmod +x setup.sh
 RUN ./setup.sh
