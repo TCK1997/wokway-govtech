@@ -1,8 +1,8 @@
 ## Currently hosted on
 ### For page to list all items
-https://wokway-govtech-pxj4dtyzhq-uc.a.run.app/ 
+http://34.68.81.70/
 ### For page to add/update/delete items
-https://wokway-govtech-pxj4dtyzhq-uc.a.run.app/edit
+http://34.68.81.70/edit
 
 ## To run a local verion
 ```
