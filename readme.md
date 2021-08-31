@@ -1,9 +1,3 @@
-## Currently hosted on
-### For page to list all items
-http://34.68.81.70/
-### For page to add/update/delete items
-http://34.68.81.70/edit
-
 ## To run a local verion
 ```
 docker build -t wokway-govtech .
